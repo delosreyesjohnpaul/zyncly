@@ -4,7 +4,7 @@ import { requireUser } from "../lib/hooks";
 import { EmptyState } from "../components/EmptyState";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ExternalLink, Settings, Users2 } from "lucide-react";
+import { ExternalLink, Link2, Pen, Settings, Trash, Users2 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 
 import {
@@ -32,8 +32,13 @@ async function getData(id: string) {
                 url: true,
                 duration: true,
               },
+              orderBy: {
+                createdAt: "desc",
+              },
             },
+            userName: true,
           },
+          
     });
     if (!data) {
         return notFound();
@@ -80,10 +85,23 @@ export default async function DashboardPage() {
                               <DropdownMenuSeparator/>
                               <DropdownMenuGroup>
                                 <DropdownMenuItem asChild>
-                                  <Link href={`/${data.eventType}/${item.url}`}>
+                                  <Link href={`/${data.userName}/${item.url}`}>
                                     <ExternalLink className="mr-2 size-4"/>
                                     Preview
                                   </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
+                                  <Link2 className="mr-2 size-4"/>
+                                  Copy
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
+                                  <Pen className="mr-2 size-4"/>
+                                  Edit
+                                </DropdownMenuItem>
+                                <DropdownMenuSeparator/>
+                                <DropdownMenuItem>
+                                  <Trash className="mr-2 size-4"/>
+                                  Delete
                                 </DropdownMenuItem>
                               </DropdownMenuGroup>
                             </DropdownMenuContent>
