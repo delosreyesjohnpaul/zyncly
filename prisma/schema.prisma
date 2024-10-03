@@ -20,6 +20,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   availability  Availability[]
+  eventType     EventType[]
  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -72,7 +73,7 @@ model Availability {
   tillTime String
   isActive Boolean @default(true)
 
-  User   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  User   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String
 
   createdAt DateTime @default(now())
@@ -87,4 +88,19 @@ enum Day {
   Friday
   Saturday
   Sunday
+}
+
+model EventType {
+  id                String  @id @default(uuid())
+  title             String
+  duration          Int
+  url               String
+  description       String
+  active            Boolean @default(true)
+  videoCallSoftware String  @default("Google Meet")
+
+  User   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  createdAt DateTime @default(now())
 }
