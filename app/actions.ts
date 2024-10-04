@@ -219,7 +219,7 @@ export async function CreateMeetingAction(formData: FormData) {
       },
       participants: [
         {
-          name: (formData.get("name") as string | null) ?? "",
+          name: formData.get("name") as string,
           email: formData.get("email") as string,
           status: "yes"
         },
@@ -228,6 +228,8 @@ export async function CreateMeetingAction(formData: FormData) {
     queryParams: {
       calendarId: getUserData.grantEmail as string,
       notifyParticipants: true,
-    }
+    },
+
   })
+  return redirect("/success");
 }
