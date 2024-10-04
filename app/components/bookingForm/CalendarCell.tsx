@@ -26,7 +26,7 @@ export function CalendarCell({
     useCalendarCell({ date }, state, ref);
 
   // Override isDisabled if the date is unavailable
-  const finalIsDisabled = isDisabled || isUnavailable;
+  const finallysDisabled = isDisabled || isUnavailable;
 
   const { focusProps, isFocusVisible } = useFocusRing();
 
@@ -48,10 +48,10 @@ export function CalendarCell({
         <div
           className={cn(
             "size-full rounded-sm flex items-center justify-center text-sm font-semibold",
-            finalIsDisabled ? "text-muted-foreground cursor-not-allowed" : "",
+            finallysDisabled ? "text-muted-foreground cursor-not-allowed" : "",
             isFocusVisible ? "group-focus:z-2 ring-gray-12 ring-offset-1" : "",
             isSelected ? "bg-primary text-white" : "",
-            !isSelected && !finalIsDisabled
+            !isSelected && !finallysDisabled
               ? "hover:bg-blue-500/10 bg-secondary"
               : ""
           )}

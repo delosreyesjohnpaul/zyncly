@@ -1,5 +1,6 @@
 import { Calendar } from "@/app/components/bookingForm/calendar";
 import { RenderCalendar } from "@/app/components/bookingForm/RenderCalendar";
+import { TimeTable } from "@/app/components/bookingForm/TimeTable";
 import prisma from "@/app/lib/db";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -46,10 +47,21 @@ async function getData(eventUrl: string, userName: string) {
 
 export default async function BookingFormRoute({
     params,
+    searchParams,
 }: {
     params: {username: string; eventUrl: string};
+    searchParams: {date?: string}
 }){
     const data = await getData(params.eventUrl, params.username); 
+    const selectedDate = searchParams.date 
+        ? new Date(searchParams.date) 
+        : new Date();
+    const formattedDate = new Intl.DateTimeFormat("en-Us", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        timeZone: "Asia/Manila"
+    }).format(selectedDate);
     return (
         <div className="min-h-screen w-screen flex items-center justify-center p-4">
             <Card className="max-w-[1000px] w-full mx-auto">
@@ -63,7 +75,7 @@ export default async function BookingFormRoute({
                             <p className="flex items-center">
                                 <CalendarX2 className="size-4 mr-2 text-primary"/>
                                 <span className="text-sm font-medium text-muted-foreground">
-                                    23. Sept 2024
+                                    {formattedDate}
                                 </span>
                             </p>
                             <p className="flex items-center">
@@ -84,17 +96,10 @@ export default async function BookingFormRoute({
 
                     <Separator orientation="vertical" className="hidden md:block h-full w-[1px]"/>
 
-                <RenderCalendar
-                    daysofWeek={[
-                        { day: "Monday", isActive: true },
-                        { day: "Tuesday", isActive: true },
-                        { day: "Wednesday", isActive: true },
-                        { day: "Thursday", isActive: true },
-                        { day: "Friday", isActive: true },
-                        { day: "Saturday", isActive: true },
-                        { day: "Sunday", isActive: true },
-                    ]}
-                />
+                <RenderCalendar availability={data.User?.availability as any}/>
+                <Separator orientation="vertical" className="h-full w-[1px]"/>
+
+                <TimeTable selectedDate={selectedDate} userName={params.username}/>
                 </CardContent>
             </Card>
         </div>
