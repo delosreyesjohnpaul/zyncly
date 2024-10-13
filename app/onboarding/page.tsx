@@ -38,7 +38,7 @@ export default function OnboardingRoute() {
             <Card>
                 <CardHeader>
                     <CardTitle>
-                        <p className="text-xl font-bold">👋 Welcome to Zy<span className="bg-gradient-to-r from-emerald-500 to-sky-400 inline-flex font-bold tracking-widest text-transparent bg-clip-text">ncly</span></p>
+                        <p className="text-xl font-bold">👋 Welcome to Zy<span className="bg-gradient-to-r from-emerald-500 to-sky-400 inline-flex font-bold tracking-tight text-transparent bg-clip-text">ncly</span></p>
                     </CardTitle>
                     <CardDescription>We need the following information to setup your profile!</CardDescription>
                 </CardHeader>
@@ -58,7 +58,7 @@ export default function OnboardingRoute() {
                             <Label>Username</Label>
                             <div className="flex rounded-md">
                                 <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-muted bg-muted text-muted-foreground text-sm">
-                                    test@mail.com/
+                                    zyncly.com/
                                 </span>
                                 <Input 
                                     placeholder="example-user-1" 

@@ -7,7 +7,7 @@ export function Hero() {
         <section className="relative flex flex-col items-center justify-center py-12 lg:py-20">
              <div className="relative items-center w-full py-12 lg:py-20">
                 <div className="text-center">
-                    <span className="text-sm text-primary font-medium tracking-tight bg-primary/10 px-4 py-2 rounded-full">
+                    <span className="text-sm text-primary font-bold tracking-tight bg-primary/10 px-4 py-2 rounded-full">
                         Introducing Zy<span className="bg-gradient-to-r from-emerald-500 to-sky-400 inline-flex font-bold tracking-tight text-transparent bg-clip-text">ncly</span>
                     </span>
                     <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-none">

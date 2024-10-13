@@ -7,7 +7,7 @@ import {
     CardTitle,
   } from "@/components/ui/card";
 
-import VideoGif from "@/public/happy-cat-happy-happy-cat.gif";
+import VideoGif from "@/public/twomenkissing-twoblackmenkissing.gif";
 import { CalendarCheck2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
