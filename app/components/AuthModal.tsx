@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
-import { FaGithub } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 import { signIn } from "../lib/auth";
 import { GithubAuthButton, GoogleAuthButton } from "./SubmitButtons";
 
