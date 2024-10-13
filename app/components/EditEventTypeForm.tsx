@@ -3,7 +3,7 @@
 import { useForm } from "@conform-to/react";
 import { useState } from "react";
 import { useFormState } from "react-dom";
-import { CreateEventTypeAction } from "../actions";
+import { EditEventTypeAction } from "../actions";
 import { parseWithZod } from "@conform-to/zod";
 import { eventTypeSchema } from "../lib/zodSchema";
 
@@ -56,7 +56,7 @@ export function EditEventForm({
 
     const [activePlatform, setActivePlatform] = useState<MeetingCallProvider>(callProvider as MeetingCallProvider);
 
-    const [lastResult, action] = useFormState(CreateEventTypeAction, undefined);
+    const [lastResult, action] = useFormState(EditEventTypeAction, undefined);
     const [form, fields] = useForm({
         lastResult,
 
@@ -80,6 +80,7 @@ export function EditEventForm({
                 </CardHeader>
                 <form id={form.id} onSubmit={form.onSubmit} action={action} noValidate>
                     <CardContent  className="grid gap-y-5">
+                        <input type="hidden" name="id" value={id} />
                         <div className="flex flex-col gap-y-2">
                             <Label>Title</Label>
                             <Input
