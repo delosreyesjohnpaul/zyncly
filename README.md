@@ -1,5 +1,8 @@
 ## Zyncly 
 
+Scheduling meetings can be a hassle, but at Zyncly, we make it effortless. With our seamless scheduling solution, your clients can easily find the perfect time to connect with you—no back-and-forth, no stress. Let us handle the logistics, so you can focus on what matters most.
+
+
 
 
 
