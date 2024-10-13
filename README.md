@@ -1,6 +1,28 @@
-## Zyncly 
+# Zyncly
 
 Scheduling meetings can be a hassle, but at Zyncly, we make it effortless. With our seamless scheduling solution, your clients can easily find the perfect time to connect with you—no back-and-forth, no stress. Let us handle the logistics, so you can focus on what matters most.
+
+## Features
+- Effortless scheduling
+- Seamless client interactions
+- Focus on important tasks
+
+## Installation
+1. Clone the repository: `git clone https://github.com/delosreyesjohnpaul/zyncly.git`
+2. Navigate to the project directory: `cd zyncly`
+3. Install dependencies: `npm install`
+
+## Usage
+Run the application:
+```bash
+npm start
+```
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+This project is licensed under the MIT License.
 
 ![image](https://github.com/user-attachments/assets/4dc54c56-b90f-434b-8b0b-6fcbcd00a03d)
 
