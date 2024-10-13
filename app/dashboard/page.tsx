@@ -17,6 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { CopyLinkMenuItem } from "../components/CopyLinkMenu";
+import { MenuActiveSwitcher } from "../components/EventTypeSwitcher";
 
 async function getData(id: string) {
     const data = await prisma.user.findUnique({
@@ -128,8 +129,8 @@ export default async function DashboardPage() {
                            </div>
                         </Link>
                         <div className="bg-muted px-5 py-3 justify-between items-center flex">
-                          
-                          <Switch defaultChecked />
+                          <MenuActiveSwitcher initialChecked={item.active} eventTypeId={item.id}/>
+
                           <Button asChild>
                             <Link href={`/dashboard/event/${item.id}`}>
                               Edit Event
