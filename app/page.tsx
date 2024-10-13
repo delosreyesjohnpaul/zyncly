@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import { auth } from "./lib/auth";
 import { Hero } from "./components/Hero";
 import { Logos } from "./components/Logos";
+import { Features } from "./components/Features";
 
 export default async function Home() {
   const session = await auth();
@@ -16,6 +17,7 @@ export default async function Home() {
       <Navbar/>
       <Hero/>
       <Logos/>
+      <Features/>
     </div>
   );
 }
