@@ -1,5 +1,4 @@
 import { CreateMeetingAction } from "@/app/actions";
-import { Calendar } from "@/app/components/bookingForm/calendar";
 import { RenderCalendar } from "@/app/components/bookingForm/RenderCalendar";
 import { TimeTable } from "@/app/components/bookingForm/TimeTable";
 import { SubmitButton } from "@/app/components/SubmitButtons";
@@ -8,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { BookMarked, CalendarX2, Clock, VideoIcon } from "lucide-react";
+import {CalendarX2, Clock, VideoIcon } from "lucide-react";
 import { notFound } from "next/navigation";
 async function getData(eventUrl: string, userName: string) {
     const data = await prisma.eventType.findFirst({
