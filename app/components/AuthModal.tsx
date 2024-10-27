@@ -4,6 +4,8 @@ import Image from "next/image";
 import Logo from "@/public/logo.png";
 import { signIn } from "../lib/auth";
 import { GithubAuthButton, GoogleAuthButton } from "./SubmitButtons";
+import { DialogDescription } from "@radix-ui/react-dialog";
+import Link from "next/link";
 
 export function AuthModal() {
     return (
@@ -18,6 +20,16 @@ export function AuthModal() {
                         Zy<span className="bg-gradient-to-r from-emerald-500 to-sky-400 inline-flex font-bold tracking-widest text-transparent bg-clip-text">ncly</span>
                     </h4>
                 </DialogHeader>
+                <DialogDescription>
+                    By signing up, you acknowledge and accept our{" "}
+                    <Link href="/privacy">
+                        <span className="text-blue-700">Privacy Policy</span>
+                    </Link> {" "}
+                    and{" "}
+                    <Link href="/terms">
+                        <span className="text-blue-700">Terms of Service</span>
+                    </Link>
+                </DialogDescription>
                 <div className="flex flex-col mt-5 gap-3">
                     <form action={async () => {
                         "use server";
